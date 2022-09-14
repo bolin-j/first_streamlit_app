@@ -1,5 +1,7 @@
 import streamlit
+import pandas
 
+# front page
 streamlit.title('My Parent New Healthy Diner')
    
 streamlit.header('Breakfast Favorites')
@@ -9,3 +11,8 @@ streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞 Avacado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+
+# data handling
+my_fruit_list = pandas.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')#pull the data into a dataframe
+streamlit.dataframe(my_fruit_list)#display the df on the front page
+
